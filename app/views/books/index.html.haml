@@ -1,0 +1,8 @@
+.page-header
+  %h3 Books
+
+- @books.each do |book|
+  = render 'book_summary', :book => book
+
+%hr
+= link_to 'Create a New Book', new_book_path, :class => 'btn btn-lg btn-primary'

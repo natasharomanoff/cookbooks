@@ -1,0 +1,30 @@
+%p#notice= notice
+
+.page-header
+  %h2
+    = @book.title
+    %br
+    %small= @book.description
+.row
+  .col-lg-8
+    %h2 Chapters
+    %ul
+      - @book.chapters.each do |chapter|
+        %li= link_to chapter.title, book_chapter_path(@book, chapter)
+  .col-lg-4
+    .page-header
+      %h4 Add Chapter
+    = form_for([@book, Chapter.new], :html => {:class => 'form-horizontal', :role => 'form'} )do |f|
+      .form-group
+        = f.label :title, :class => 'col-lg-2 control-label'
+        .col-lg-10
+          = f.text_field :title , :class => 'form-control'
+      .form-group
+        .col-lg-offset-2.col-lg-10
+          = f.submit :class => 'btn btn-primary'
+
+
+
+= link_to 'Edit', edit_book_path(@book)
+\|
+= link_to 'Back', books_path

@@ -1,0 +1,4 @@
+%ol.breadcrumb
+  %li= link_to book.title, book_path(@book)
+  %li= link_to chapter.title, book_chapter_path(@book, @chapter)
+  %li.active= active

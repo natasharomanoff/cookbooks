@@ -1,0 +1,12 @@
+%ol.breadcrumb
+  %li= link_to @book.title, book_path(@book)
+  %li.active= @chapter.title
+
+.page-header
+  %h2= @chapter.title
+
+%ul
+  - @chapter.recipes.each do |recipe|
+    %li= link_to recipe.problem_title, book_chapter_recipe_path(@book, @chapter, recipe)
+
+= link_to 'Add new recipe', new_book_chapter_recipe_path(@book, @chapter), :class => 'btn btn-lg btn-primary'

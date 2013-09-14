@@ -1,0 +1,11 @@
+= render 'breadcrumb', :book => @book, :chapter => @chapter, :active => @recipe.problem_title
+
+.page-header
+  %h3= @recipe.problem_title
+
+%h4 Problem
+%p= @recipe.problem_description
+
+
+%h4 Solution
+%p= markdown(@recipe.solution)

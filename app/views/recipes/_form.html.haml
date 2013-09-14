@@ -1,0 +1,16 @@
+= form_for([@book, @chapter, Recipe.new], :html => {:class => 'form-horizontal', :role => 'form'} )do |f|
+  .form-group
+    = f.label "Title", :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_field :problem_title , :class => 'form-control'
+  .form-group
+    = f.label "Problem", :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :problem_description, :rows => 2, :class => 'form-control'
+  .form-group
+    = f.label :solution, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :solution , :rows => 14, :class => 'form-control'
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit :class => 'btn btn-primary'
